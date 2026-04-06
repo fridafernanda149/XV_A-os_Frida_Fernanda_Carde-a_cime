@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XV Años – Frida Fernanda Cardeña Cime</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="bg-canvas" aria-hidden="true"></div>
+  <canvas id="confettiCanvas" class="confetti" aria-hidden="true"></canvas>
+  <audio id="bgMusic" preload="auto" loop></audio>
+
+  <nav class="dock" aria-label="Navegación">
+    <button class="dock__toggle" id="dockToggle" type="button" aria-label="Mostrar u ocultar menú">◂</button>
+
+    <div class="dock__items" id="dockItems">
+      <a class="dock__btn" href="#inicio">Inicio</a>
+      <a class="dock__btn" href="#info">Info</a>
+      <a class="dock__btn" href="#ubicacion">Ubicación</a>
+      <a class="dock__btn" href="#itinerario">Itinerario</a>
+      <a class="dock__btn" href="#fotos">Fotos</a>
+      <a class="dock__btn" href="#familia">Familia</a>
+
+      <button class="dock__btn dock__btn--gold" id="musicToggle" type="button" aria-label="Reproducir o pausar música">
+        🎵 Música
+      </button>
+    </div>
+  </nav>
+
+  <section class="stage" id="inicio">
+    <div class="invite reveal">
+      <div class="orn orn--top" aria-hidden="true"></div>
+      <div class="orn orn--bottom" aria-hidden="true"></div>
+
+      <div class="invite__inner invite__inner--hero">
+        <p class="kicker">INVITACIÓN</p>
+
+        <h1 class="title"><strong>Mis XV Años</strong></h1>
+        <h2 class="name">Frida Fernanda Cardeña Cime</h2>
+
+        <div class="heroTextBlock">
+          <p class="subtitle subtitle--formal">
+            Con la bendición de Dios y el amor de mi familia, me siento muy feliz de llegar a este momento de mi vida ✨
+          </p>
+
+          <p class="subtitle subtitle--formal">
+            Le invito a usted y a su apreciada familia a compartir conmigo este día tan especial 💛
+          </p>
+        </div>
+
+        <div class="heroBlock">
+          <div class="eventCard">
+            <p class="eventCard__title">Ceremonia religiosa</p>
+
+            <div class="meta meta--event">
+              <div class="meta__row">
+                <div class="meta__label"><strong>FECHA</strong></div>
+                <div class="meta__value">SÁBADO 18 DE ABRIL 2026</div>
+              </div>
+              <div class="meta__row">
+                <div class="meta__label"><strong>HORA</strong></div>
+                <div class="meta__value">7:00 PM</div>
+              </div>
+              <div class="meta__row">
+                <div class="meta__label"><strong>LUGAR</strong></div>
+                <div class="meta__value">PARROQUIA NUESTRA SEÑORA DE FÁTIMA</div>
+              </div>
+            </div>
+
+            <div class="actions actions--event">
+              <a class="btn btn--primary"
+                 href="https://maps.google.com/?q=Parroquia+Nuestra+Se%C3%B1ora+de+F%C3%A1tima+Canc%C3%BAn"
+                 target="_blank" rel="noopener">
+                📍 Ver ubicación
+              </a>
+            </div>
+          </div>
+
+          <div class="eventCard eventCard--reception">
+            <p class="eventCard__title">Recepción</p>
+
+            <div class="meta meta--event">
+              <div class="meta__row">
+                <div class="meta__label"><strong>HORA</strong></div>
+                <div class="meta__value">8:00 PM</div>
+              </div>
+              <div class="meta__row">
+                <div class="meta__label"><strong>LUGAR</strong></div>
+                <div class="meta__value">SALÓN DE EVENTOS VIKTORIA</div>
+              </div>
+            </div>
+
+            <div class="actions actions--event">
+              <a class="btn btn--primary"
+                 href="https://www.google.com/maps/dir//SALON+VIKTORIA+CANCUN,+Av.+Ni%C3%B1os+H%C3%A9roes+Supermanzana+208,+77519+Canc%C3%BAn,+Q.R./@21.1960637,-86.8722049,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8f4c2d0017042ccb:0xe7c1400cebcaf2eb!2m2!1d-86.8889306!2d21.1619825?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+                 target="_blank" rel="noopener">
+                📍 Ver ubicación
+              </a>
+            </div>
+          </div>
+
+          <p class="fineprint">Código de vestimenta: <strong>Formal</strong> ✨</p>
+
+          <div class="line" aria-hidden="true"></div>
+
+          <p class="countLabel" id="contador"><strong>FALTAN</strong></p>
+
+          <div class="countdown countdown--focus" id="countdownBox" aria-label="Cuenta regresiva">
+            <div class="pill"><div id="d" class="pill__num">--</div><div class="pill__lbl">DÍAS</div></div>
+            <div class="pill"><div id="h" class="pill__num">--</div><div class="pill__lbl">HORAS</div></div>
+            <div class="pill"><div id="m" class="pill__num">--</div><div class="pill__lbl">MIN</div></div>
+            <div class="pill"><div id="s" class="pill__num">--</div><div class="pill__lbl">SEG</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="info">
+    <div class="section__inner reveal">
+      <p class="eyebrow">✨ TODO LO IMPORTANTE</p>
+      <h3 class="h3"><strong>Detalles & Regalo</strong></h3>
+      <p class="section__lead">
+        Aquí va lo esencial para que llegues tranquilo, te la pases increíble y nos ayudes a guardar recuerdos 💛
+      </p>
+
+      <div class="grid-2 grid-2--bigcards">
+        <article class="card card--infoFeatured">
+          <img class="card__imgBig" src="./css/components/assets/imagen/Conjunto_formal_en_tonos_rojos.png" alt="Código de vestimenta">
+          <div class="card__body card__body--infoSimple">
+            <div class="infoBadge">Código de vestimenta</div>
+            <p class="infoBigText">Formal / casual</p>
+          </div>
+        </article>
+
+        <article class="card card--infoFeatured">
+          <img class="card__imgBig" src="./css/components/assets/imagen/carta.png" alt="Regalo lluvia de sobres">
+          <div class="card__body card__body--infoSimple">
+            <div class="giftHeading">
+              <span class="giftEmoji">🎁</span>
+              <h4 class="card__title card__title--gift"><strong>Regalo</strong></h4>
+            </div>
+
+            <p class="infoBigText infoBigText--gift">Lluvia de sobres</p>
+
+            <p class="card__text card__text--gift">
+              Gracias por permitirme la manera de recibir mis regalos
+            </p>
+
+            <p class="giftThanks">
+              Gracias por ser parte de este día tan especial 💛
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="ubicacion">
+    <div class="section__inner reveal">
+      <p class="eyebrow">📍 LLEGAR FÁCIL</p>
+      <h3 class="h3"><strong>Ubicación</strong></h3>
+
+      <div class="locationStack">
+        <div class="panel panel--locationBlock">
+          <div class="panel__body">
+            <p class="locationSectionTitle">Ceremonia religiosa</p>
+
+            <div class="grid-2 grid-2--loc">
+              <div class="locMedia">
+                <img class="locImg" src="./css/components/assets/imagen/iglesia.png" alt="Iglesia de la ceremonia religiosa">
+              </div>
+
+              <div>
+                <div class="cardline">
+                  <div class="cardline__label"><strong>LUGAR</strong></div>
+                  <div class="cardline__value">NUESTRA SEÑORA DE FÁTIMA</div>
+                </div>
+
+                <div class="cardline" style="margin-top:10px;">
+                  <div class="cardline__label"><strong>DIRECCIÓN</strong></div>
+                  <div class="cardline__value">59, KANACHÉN SUPERMANZANA 59, 77515 CANCÚN, Q.R.</div>
+                </div>
+
+                <div class="row" style="margin-top:12px;">
+                  <a class="btn btn--primary btn--sm"
+                     href="https://www.google.com/maps/dir//Nuestra+Se%C3%B1ora+de+F%C3%A1tima,+59,+Kanach%C3%A9n+Supermanzana+59,+77515+Canc%C3%BAn,+Q.R./@21.1950076,-86.8802592,14.25z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8f4c2b812774eb85:0xc570449aadbef71c!2m2!1d-86.8580432!2d21.1572238?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+                     target="_blank" rel="noopener">
+                    Abrir ubicación en Google Maps
+                  </a>
+                </div>
+
+                <div class="tiprow tiprow--location" style="margin-top:12px;">
+                  <div class="tip">
+                    <div class="tip__icon">⛪</div>
+                    <div>
+                      <div class="tip__title"><strong>Ceremonia</strong></div>
+                      <div class="tip__text">Te recomendamos llegar con unos minutos de anticipación.</div>
+                    </div>
+                  </div>
+                  <div class="tip">
+                    <div class="tip__icon">🕒</div>
+                    <div>
+                      <div class="tip__title"><strong>Hora</strong></div>
+                      <div class="tip__text">La ceremonia religiosa inicia a las 7:00 PM.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel--locationBlock">
+          <div class="panel__body">
+            <p class="locationSectionTitle">Recepción</p>
+
+            <div class="grid-2 grid-2--loc">
+              <div class="locMedia">
+                <img class="locImg" src="./css/components/assets/imagen/fachada.png" alt="Fachada del salón">
+              </div>
+
+              <div>
+                <div class="cardline">
+                  <div class="cardline__label"><strong>LUGAR</strong></div>
+                  <div class="cardline__value">SALÓN VIKTORIA CANCÚN</div>
+                </div>
+
+                <div class="cardline" style="margin-top:10px;">
+                  <div class="cardline__label"><strong>DIRECCIÓN</strong></div>
+                  <div class="cardline__value">AV. NIÑOS HÉROES SUPERMANZANA 208, 77519 CANCÚN, Q.R.</div>
+                </div>
+
+                <div class="row" style="margin-top:12px;">
+                  <a class="btn btn--primary btn--sm"
+                     href="https://www.google.com/maps/dir//SALON+VIKTORIA+CANCUN,+Av.+Ni%C3%B1os+H%C3%A9roes+Supermanzana+208,+77519+Canc%C3%BAn,+Q.R./@21.1960637,-86.8722049,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8f4c2d0017042ccb:0xe7c1400cebcaf2eb!2m2!1d-86.8889306!2d21.1619825?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+                     target="_blank" rel="noopener">
+                    Abrir ubicación en Google Maps
+                  </a>
+                </div>
+
+                <div class="tiprow tiprow--location" style="margin-top:12px;">
+                  <div class="tip">
+                    <div class="tip__icon">🚗</div>
+                    <div>
+                      <div class="tip__title"><strong>Estacionamiento</strong></div>
+                      <div class="tip__text">Llega con tiempo para estacionarte sin estrés.</div>
+                    </div>
+                  </div>
+                  <div class="tip">
+                    <div class="tip__icon">🎉</div>
+                    <div>
+                      <div class="tip__title"><strong>Recepción</strong></div>
+                      <div class="tip__text">La recepción comienza a las 8:00 PM.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="itinerario">
+    <div class="section__inner reveal">
+      <p class="eyebrow">🎶 LA NOCHE</p>
+      <h3 class="h3"><strong>Itinerario</strong></h3>
+
+      <div class="panel">
+        <div class="panel__body">
+          <div class="timeline">
+            <div class="titem">
+              <div class="titem__time">7:00 PM</div>
+              <div class="titem__dot"></div>
+              <div class="titem__card">
+                <div class="titem__title"><strong>Misa de acción de gracias</strong></div>
+                <div class="titem__text">Momento especial y bendición para celebrar este día ✨</div>
+              </div>
+            </div>
+
+            <div class="titem">
+              <div class="titem__time">8:00 PM</div>
+              <div class="titem__dot"></div>
+              <div class="titem__card">
+                <div class="titem__title"><strong>Recepción</strong></div>
+                <div class="titem__text">Llegada y bienvenida ✨</div>
+              </div>
+            </div>
+
+            <div class="titem">
+              <div class="titem__time">9:00 PM</div>
+              <div class="titem__dot"></div>
+              <div class="titem__card">
+                <div class="titem__title"><strong>Entrada</strong></div>
+                <div class="titem__text">Momento especial 💖</div>
+              </div>
+            </div>
+
+            <div class="titem">
+              <div class="titem__time">10:00 PM</div>
+              <div class="titem__dot"></div>
+              <div class="titem__card">
+                <div class="titem__title"><strong>Vals</strong></div>
+                <div class="titem__text">Elegancia total 👑</div>
+              </div>
+            </div>
+
+            <div class="titem">
+              <div class="titem__time">10:30 PM</div>
+              <div class="titem__dot"></div>
+              <div class="titem__card">
+                <div class="titem__title"><strong>Fiesta</strong></div>
+                <div class="titem__text">¡A bailar! 🎉</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="fotos">
+    <div class="section__inner reveal">
+      <p class="eyebrow">📸 RECUERDOS</p>
+      <h3 class="h3"><strong>Fotos</strong></h3>
+
+      <div class="panel panel--gallery">
+        <div class="panel__body panel__body--gallery">
+          <div class="carousel" aria-label="Carrusel de fotos">
+            <button class="carBtn carBtn--prev" id="carPrev" type="button" aria-label="Anterior">‹</button>
+
+            <div class="carViewport">
+              <img id="carImage" class="carImage" src="./css/components/assets/imagen/1.jpg" alt="Foto del carrusel" tabindex="0">
+            </div>
+
+            <button class="carBtn carBtn--next" id="carNext" type="button" aria-label="Siguiente">›</button>
+          </div>
+
+          <div class="carDots" id="carDots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="familia">
+    <div class="section__inner reveal">
+      <p class="eyebrow">👨‍👩‍👧‍👦 CON CARIÑO</p>
+      <h3 class="h3"><strong>Mensaje de la Familia</strong></h3>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel__body">
+            <div class="quote">
+              <p class="quote__text">
+                “Con mucha alegría te invitamos a compartir esta noche tan especial.
+                Tu presencia hará este momento aún más inolvidable.”
+              </p>
+              <p class="quote__by">— <strong>Familia de Frida Fernanda</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__body">
+            <div class="stackphotos">
+              <img src="https://picsum.photos/seed/xvfam1/900/700" alt="Foto familia 1">
+              <img src="https://picsum.photos/seed/xvfam2/900/700" alt="Foto familia 2">
+              <img src="https://picsum.photos/seed/xvfam3/900/700" alt="Foto familia 3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Cerrar imagen">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Foto anterior">‹</button>
+    <div class="lightbox__content">
+      <img id="lightboxImage" class="lightbox__image" src="" alt="Foto ampliada">
+    </div>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Foto siguiente">›</button>
+  </div>
+
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
