@@ -64,6 +64,9 @@ body{
   z-index:-2;
 }
 
+/* =========================
+   DOCK
+========================= */
 .dock{
   position:fixed;
   left:50%;
@@ -79,8 +82,10 @@ body{
   border:1px solid rgba(255,217,179,.14);
   backdrop-filter:blur(10px);
   box-shadow:0 24px 60px rgba(0,0,0,.35);
-  max-width:min(96vw, 1100px);
+  max-width:min(96vw, 1200px);
+  overflow:visible;
 }
+
 .dock__toggle{
   width:46px;
   height:46px;
@@ -92,22 +97,32 @@ body{
   font-size:18px;
   cursor:pointer;
   flex:0 0 auto;
+  transition:background .18s ease, transform .14s ease, border-color .18s ease;
 }
+.dock__toggle:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.10);
+}
+
 .dock__items{
   display:flex;
   gap:8px;
   align-items:center;
-  transition:max-width .28s ease, opacity .28s ease, transform .28s ease;
-  max-width:900px;
+  transition:max-width .22s ease, opacity .22s ease, transform .22s ease;
+  max-width:1200px;
   opacity:1;
   transform:translateX(0);
-  overflow:hidden;
+  overflow:visible;
+  flex-wrap:nowrap;
 }
+
 .dock.is-collapsed .dock__items{
   max-width:0;
   opacity:0;
   transform:translateX(-8px);
+  overflow:hidden;
 }
+
 .dock__btn{
   text-decoration:none;
   color:rgba(255,255,255,.92);
@@ -119,11 +134,38 @@ body{
   font-size:12.5px;
   cursor:pointer;
   white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:
+    background .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .14s ease;
 }
+
+.dock__btn:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.10);
+}
+
 .dock__btn--gold{
   color:#1b070b;
   background:linear-gradient(180deg, rgba(255,217,179,.98), rgba(230,176,126,.98));
   border-color:rgba(255,217,179,.35);
+}
+
+.dock__btn.is-active{
+  color:#1b070b;
+  background:linear-gradient(180deg, rgba(255,217,179,.98), rgba(230,176,126,.98));
+  border-color:rgba(255,217,179,.35);
+  box-shadow:0 8px 18px rgba(0,0,0,.16);
+  transform:translateY(-1px);
+}
+
+.music-float-btn{
+  display:none !important;
 }
 
 .stage{
@@ -459,15 +501,20 @@ body{
   margin:0;
   letter-spacing:.16em;
   text-transform:uppercase;
-  font-weight:800;
-  font-size:12px;
-  color:rgba(255,217,179,.88);
+  font-weight:900;
+  font-size:20px;
+  color:rgba(255,217,179,.96);
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 .h3{
-  margin:8px 0 14px;
+  margin:12px 0 18px;
   font-family:Cinzel, serif;
-  font-size:clamp(26px, 2.8vw, 36px);
-  color:rgba(255,255,255,.95);
+  font-size:clamp(42px, 4.6vw, 62px);
+  line-height:1.05;
+  color:rgba(255,255,255,.98);
+  text-shadow:0 10px 24px rgba(0,0,0,.18);
 }
 .section__lead{
   margin:0 0 18px;
@@ -618,13 +665,6 @@ body{
 .giftEmoji{
   font-size:18px;
   line-height:1;
-}
-
-.giftThanks{
-  margin:2px 0 0;
-  font-size:15px;
-  line-height:1.45;
-  color:rgba(255,255,255,.88);
 }
 
 .grid-2--loc{
@@ -801,6 +841,7 @@ body{
   display:flex;
   gap:8px;
   justify-content:center;
+  flex-wrap:wrap;
 }
 .dot{
   width:10px;
@@ -812,6 +853,155 @@ body{
 }
 .dot.is-active{
   background:rgba(255,217,179,.92);
+}
+
+.confirmSectionHead{
+  text-align:center;
+}
+.h3--confirm{
+  text-align:center;
+  margin:0 0 22px;
+}
+
+.panel--confirm{
+  overflow:visible;
+}
+.panel__body--confirm{
+  padding:34px 30px 38px;
+  text-align:center;
+}
+.confirmHeaderLine{
+  width:min(620px, 94%);
+  height:14px;
+  margin:0 auto 28px;
+  position:relative;
+}
+.confirmHeaderLine::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  height:2px;
+  transform:translateY(-50%);
+  background:linear-gradient(90deg, transparent, rgba(255,217,179,.95) 12%, rgba(255,217,179,.95) 88%, transparent);
+}
+.confirmHeaderLine::after{
+  content:"◆ ◆ ◆";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:rgba(255,217,179,.96);
+  font-size:18px;
+  letter-spacing:.26em;
+  padding:0 18px;
+}
+
+.confirmText{
+  margin:0 auto;
+  max-width:820px;
+  font-family:Cinzel, serif;
+  font-size:clamp(18px, 2vw, 28px);
+  line-height:1.9;
+  color:rgba(255,255,255,.95);
+}
+
+.confirmMascots{
+  display:none !important;
+}
+
+.confirmDateLabel{
+  margin:0 0 14px;
+  text-align:center;
+  font-family:Cinzel, serif;
+  font-size:clamp(22px, 2.2vw, 34px);
+  line-height:1.5;
+  color:rgba(255,217,179,.96);
+}
+
+.confirmDateBox{
+  width:min(700px, 92%);
+  margin:0 auto;
+  text-align:center;
+  font-family:Cinzel, serif;
+  font-size:clamp(24px, 2.8vw, 40px);
+  line-height:1.45;
+  font-weight:900;
+  color:var(--gold-1);
+  letter-spacing:.02em;
+  text-shadow:
+    0 10px 24px rgba(0,0,0,.20),
+    0 0 10px rgba(230,176,126,.10);
+}
+
+.confirmCallWrap{
+  margin-top:34px;
+  display:flex;
+  justify-content:center;
+}
+
+.confirmCallBtn{
+  width:min(620px, 92%);
+  min-height:102px;
+  padding:18px 22px;
+  border-radius:999px;
+  background:linear-gradient(180deg, rgba(239,201,161,.98), rgba(229,188,141,.98));
+  color:#16090d;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  box-shadow:0 22px 50px rgba(0,0,0,.24);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.confirmCallBtn:hover{
+  transform:translateY(-2px) scale(1.01);
+  box-shadow:0 28px 58px rgba(0,0,0,.28);
+}
+
+.confirmCallText{
+  flex:0 1 auto;
+  text-align:center;
+  font-size:clamp(20px, 2.2vw, 34px);
+  font-weight:900;
+  line-height:1.12;
+  animation:confirmPulse 1.9s ease-in-out infinite;
+}
+@keyframes confirmPulse{
+  0%,100%{ transform:scale(1); opacity:1; }
+  50%{ transform:scale(1.03); opacity:.92; }
+}
+
+.confirmCallIconWrap{
+  width:92px;
+  height:92px;
+  border-radius:999px;
+  background:#25d366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 12px 26px rgba(0,0,0,.18);
+  flex:0 0 auto;
+  animation:whatsappPulse 1.6s ease-in-out infinite;
+}
+
+.confirmCallIconSvg{
+  width:42px;
+  height:42px;
+  display:block;
+}
+
+@keyframes whatsappPulse{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 12px 26px rgba(0,0,0,.18);
+  }
+  50%{
+    transform:scale(1.08);
+    box-shadow:0 18px 34px rgba(37,211,102,.38);
+  }
 }
 
 .lightbox{
@@ -876,32 +1066,6 @@ body{
 .lightbox__nav--prev{ left:18px; }
 .lightbox__nav--next{ right:18px; }
 
-.quote{ padding:10px 6px; }
-.quote__text{
-  margin:0;
-  font-size:16px;
-  line-height:1.7;
-  color:rgba(255,255,255,.86);
-}
-.quote__by{
-  margin:12px 0 0;
-  color:rgba(255,217,179,.86);
-  font-family:Cinzel, serif;
-}
-
-.stackphotos{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:10px;
-}
-.stackphotos img{
-  width:100%;
-  height:150px;
-  object-fit:cover;
-  border-radius:16px;
-  border:1px solid rgba(255,217,179,.10);
-}
-
 .tiny{
   margin:10px 0 0;
   font-size:12px;
@@ -918,6 +1082,9 @@ body{
   transform:translateY(0);
 }
 
+/* =========================
+   TABLET / LAPTOP
+========================= */
 @media (max-width: 1100px){
   .section__inner{
     width:min(96vw, 1000px);
@@ -931,6 +1098,14 @@ body{
   .carViewport{
     height:min(68vh, 640px);
   }
+
+  .eyebrow{
+    font-size:18px;
+  }
+
+  .h3{
+    font-size:clamp(38px, 4.2vw, 54px);
+  }
 }
 
 @media (max-width: 900px){
@@ -939,7 +1114,6 @@ body{
   .grid-2--loc{ grid-template-columns:1fr; }
   .locImg{ height:320px; }
   .tiprow{ grid-template-columns:1fr; }
-  .stackphotos{ grid-template-columns:1fr 1fr; }
 
   .titem{
     grid-template-columns:90px 20px 1fr;
@@ -965,38 +1139,133 @@ body{
   .dock{
     max-width:calc(100vw - 20px);
   }
+
+  .eyebrow{
+    font-size:17px;
+  }
+
+  .h3{
+    font-size:clamp(34px, 4.4vw, 48px);
+  }
+
+  .confirmText{
+    font-size:clamp(18px, 2.6vw, 24px);
+  }
+
+  .confirmDateLabel{
+    font-size:clamp(20px, 2.8vw, 28px);
+  }
+
+  .confirmDateBox{
+    font-size:clamp(22px, 3vw, 32px);
+  }
+
+  .confirmCallBtn{
+    min-height:96px;
+    gap:14px;
+    width:min(560px, 94%);
+  }
+
+  .confirmCallIconWrap{
+    width:84px;
+    height:84px;
+  }
+
+  .confirmCallIconSvg{
+    width:38px;
+    height:38px;
+  }
 }
 
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 700px){
   .dock{
-    width:calc(100% - 20px);
-    left:10px;
+    width:calc(100% - 12px);
+    left:6px;
+    right:6px;
     transform:none;
     justify-content:flex-start;
-    overflow-x:auto;
-    padding:10px;
+    padding:8px;
+    gap:8px;
+    border-radius:28px;
+    align-items:flex-start;
+  }
+
+  .dock__toggle{
+    width:44px;
+    height:44px;
+    font-size:16px;
+    flex:0 0 44px;
+    margin-top:6px;
   }
 
   .dock__items{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:8px;
+    width:100%;
     max-width:none;
+    overflow:visible;
+  }
+
+  .dock__btn{
+    min-width:0;
+    width:100%;
+    min-height:42px;
+    padding:10px 8px;
+    font-size:13px;
+    text-align:center;
+    border-radius:18px;
   }
 
   .dock.is-collapsed .dock__items{
     max-width:0;
+    width:0;
+    opacity:0;
+    transform:translateX(-8px);
+    overflow:hidden;
   }
 
-  .section{
-    padding:48px 14px 76px;
+  .carousel{
+    grid-template-columns:1fr;
+    gap:0;
+    position:relative;
   }
 
-  .section--alt{
-    padding:48px 14px 76px;
+  .carViewport{
+    width:100%;
+    min-height:420px;
+    height:62vh;
+    border-radius:22px;
   }
+
+  .carImage{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  .carBtn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:5;
+    width:52px;
+    height:52px;
+    border-radius:16px;
+    font-size:30px;
+  }
+
+  .carBtn--prev{ left:14px; }
+  .carBtn--next{ right:14px; }
 }
 
 @media (max-width: 520px){
   .stage{
-    padding:24px 12px 100px;
+    padding:24px 12px 118px;
   }
 
   .invite{
@@ -1010,15 +1279,11 @@ body{
   }
 
   .invite__inner{
-    padding:150px 18px 120px;
+    padding:150px 18px 130px;
   }
 
   .invite__inner--hero{
     padding-top:150px;
-  }
-
-  .kicker{
-    margin-bottom:18px;
   }
 
   .title{
@@ -1056,10 +1321,6 @@ body{
     padding:18px 14px 20px;
   }
 
-  .eventCard--reception{
-    margin-top:30px;
-  }
-
   .eventCard__title{
     font-size:34px;
   }
@@ -1079,17 +1340,9 @@ body{
     font-size:13px;
   }
 
-  .fineprint{
-    margin-top:16px;
-  }
-
   .card__imgBig{
     height:170px;
     padding:4px;
-  }
-
-  .infoBadge{
-    font-size:16px;
   }
 
   .infoBigText{
@@ -1105,20 +1358,12 @@ body{
     max-width:100%;
   }
 
-  .giftThanks{
-    font-size:14px;
-  }
-
   .locationSectionTitle{
     font-size:34px;
   }
 
   .locImg{
     height:260px;
-  }
-
-  .tiprow--location{
-    gap:12px;
   }
 
   .titem{
@@ -1151,22 +1396,52 @@ body{
     font-size:14px;
   }
 
-  .carousel{
-    grid-template-columns:44px 1fr 44px;
-    gap:10px;
+  .dock{
+    width:calc(100% - 10px);
+    left:5px;
+    right:5px;
+    padding:7px;
+    gap:7px;
+    border-radius:24px;
+    align-items:flex-start;
   }
 
-  .carBtn{
-    width:44px;
-    height:44px;
-    border-radius:14px;
-    font-size:28px;
+  .dock__toggle{
+    width:42px;
+    height:42px;
+    flex:0 0 42px;
+    font-size:15px;
+    margin-top:4px;
+  }
+
+  .dock__items{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:7px;
+  }
+
+  .dock__btn{
+    min-height:40px;
+    padding:9px 8px;
+    font-size:12px;
+    border-radius:16px;
+  }
+
+  .carousel{
+    grid-template-columns:1fr;
+    gap:0;
   }
 
   .carViewport{
-    min-height:240px;
-    height:min(52vh, 380px);
+    min-height:360px;
+    height:56vh;
     border-radius:18px;
+  }
+
+  .carBtn{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    font-size:26px;
   }
 
   .lightbox{
@@ -1194,4 +1469,32 @@ body{
 
   .lightbox__nav--prev{ left:10px; }
   .lightbox__nav--next{ right:10px; }
+
+  .confirmCallBtn{
+    width:100%;
+    min-height:82px;
+    padding:14px 16px;
+    border-radius:26px;
+    gap:12px;
+    justify-content:center;
+  }
+
+  .confirmCallText{
+    font-size:18px;
+    line-height:1.15;
+    text-align:center;
+    flex:0 1 auto;
+  }
+
+  .confirmCallIconWrap{
+    width:74px;
+    height:74px;
+    margin-left:0;
+  }
+
+  .confirmCallIconSvg{
+    width:32px;
+    height:32px;
+  }
 }
+

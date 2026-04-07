@@ -1,13 +1,13 @@
 export const INVITE_CONFIG = {
-  eventDateISO: "2026-04-18T19:00:00",
+  eventDateISO: "2026-04-18T20:00:00-05:00",
 
   quinceName: "Frida Fernanda Cardeña Cime",
   phrase:
-    "Una etapa mágica comienza ✨ Acompáñame a celebrar mis XV en una noche llena de luz, música y momentos inolvidables.",
+    "Una etapa mágica comienza. Acompáñame a celebrar mis XV en una noche llena de luz, música y momentos inolvidables.",
 
   dateText: "Sábado 18 de Abril 2026",
-  timeText: "7:00 PM",
-  placeText: "Salón / Dirección aquí",
+  timeText: "8:00 PM",
+  placeText: "Salón Viktoria Cancún",
 
   hashtag: "#XVFridaFernanda",
 
@@ -15,9 +15,10 @@ export const INVITE_CONFIG = {
   mapsEmbedUrl: "",
 
   familyText:
-    "“Con mucha alegría, te invitamos a acompañarnos en esta noche tan especial. Tu presencia hará este momento aún más inolvidable.”",
+    "Con mucha alegría, te invitamos a acompañarnos en esta noche tan especial. Tu presencia hará este momento aún más inolvidable.",
   familyBy: "— Familia de Frida Fernanda",
 
-  whatsappNumber: "529981234567",
-  rsvpBaseText: "Hola 😊 Confirmo mi asistencia a los XV de Frida Fernanda Cardeña Cime."
+  whatsappNumber: "529984761565",
+  rsvpBaseText:
+    "Hola, quiero confirmar mi asistencia a los XV de Frida Fernanda Cardeña Cime."
 };

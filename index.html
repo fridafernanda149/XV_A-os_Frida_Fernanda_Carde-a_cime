@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,22 +18,21 @@
   <audio id="bgMusic" preload="auto" loop></audio>
 
   <nav class="dock" aria-label="Navegación">
-    <button class="dock__toggle" id="dockToggle" type="button" aria-label="Mostrar u ocultar menú">◂</button>
+  <button class="dock__toggle" id="dockToggle" type="button" aria-label="Mostrar u ocultar menú">◂</button>
 
-    <div class="dock__items" id="dockItems">
-      <a class="dock__btn" href="#inicio">Inicio</a>
-      <a class="dock__btn" href="#info">Info</a>
-      <a class="dock__btn" href="#ubicacion">Ubicación</a>
-      <a class="dock__btn" href="#itinerario">Itinerario</a>
-      <a class="dock__btn" href="#fotos">Fotos</a>
-      <a class="dock__btn" href="#familia">Familia</a>
+  <div class="dock__items" id="dockItems">
+    <button class="dock__btn dock__btn--gold" id="musicToggle" type="button" aria-label="Reproducir o pausar música">
+      🎵 Música
+    </button>
 
-      <button class="dock__btn dock__btn--gold" id="musicToggle" type="button" aria-label="Reproducir o pausar música">
-        🎵 Música
-      </button>
-    </div>
-  </nav>
-
+    <a class="dock__btn" href="#inicio">Inicio</a>
+    <a class="dock__btn" href="#info">Info</a>
+    <a class="dock__btn" href="#ubicacion">Ubicación</a>
+    <a class="dock__btn" href="#itinerario">Itinerario</a>
+    <a class="dock__btn" href="#fotos">Fotos</a>
+    <a class="dock__btn" href="#confirmacion">Confirmación</a>
+  </div>
+</nav>
   <section class="stage" id="inicio">
     <div class="invite reveal">
       <div class="orn orn--top" aria-hidden="true"></div>
@@ -47,11 +46,11 @@
 
         <div class="heroTextBlock">
           <p class="subtitle subtitle--formal">
-            Con la bendición de Dios y el amor de mi familia, me siento muy feliz de llegar a este momento de mi vida ✨
+            Con la bendición de Dios y el amor de mi familia, me siento muy feliz de llegar a este momento de mi vida.
           </p>
 
           <p class="subtitle subtitle--formal">
-            Le invito a usted y a su apreciada familia a compartir conmigo este día tan especial 💛
+            Le invito a usted y a su apreciada familia a compartir conmigo este día tan especial.
           </p>
         </div>
 
@@ -106,7 +105,7 @@
             </div>
           </div>
 
-          <p class="fineprint">Código de vestimenta: <strong>Formal</strong> ✨</p>
+          <p class="fineprint">Código de vestimenta: <strong>Formal</strong></p>
 
           <div class="line" aria-hidden="true"></div>
 
@@ -128,7 +127,7 @@
       <p class="eyebrow">✨ TODO LO IMPORTANTE</p>
       <h3 class="h3"><strong>Detalles & Regalo</strong></h3>
       <p class="section__lead">
-        Aquí va lo esencial para que llegues tranquilo, te la pases increíble y nos ayudes a guardar recuerdos 💛
+        Aquí va lo esencial para que llegues tranquilo, te la pases increíble y nos ayudes a guardar recuerdos.
       </p>
 
       <div class="grid-2 grid-2--bigcards">
@@ -152,10 +151,6 @@
 
             <p class="card__text card__text--gift">
               Gracias por permitirme la manera de recibir mis regalos
-            </p>
-
-            <p class="giftThanks">
-              Gracias por ser parte de este día tan especial 💛
             </p>
           </div>
         </article>
@@ -217,6 +212,7 @@
             </div>
           </div>
         </div>
+
 
         <div class="panel panel--locationBlock">
           <div class="panel__body">
@@ -283,7 +279,7 @@
               <div class="titem__dot"></div>
               <div class="titem__card">
                 <div class="titem__title"><strong>Misa de acción de gracias</strong></div>
-                <div class="titem__text">Momento especial y bendición para celebrar este día ✨</div>
+                <div class="titem__text">Momento especial y bendición para celebrar este día.</div>
               </div>
             </div>
 
@@ -292,7 +288,7 @@
               <div class="titem__dot"></div>
               <div class="titem__card">
                 <div class="titem__title"><strong>Recepción</strong></div>
-                <div class="titem__text">Llegada y bienvenida ✨</div>
+                <div class="titem__text">Llegada y bienvenida.</div>
               </div>
             </div>
 
@@ -301,7 +297,7 @@
               <div class="titem__dot"></div>
               <div class="titem__card">
                 <div class="titem__title"><strong>Entrada</strong></div>
-                <div class="titem__text">Momento especial 💖</div>
+                <div class="titem__text">Momento especial.</div>
               </div>
             </div>
 
@@ -310,7 +306,7 @@
               <div class="titem__dot"></div>
               <div class="titem__card">
                 <div class="titem__title"><strong>Vals</strong></div>
-                <div class="titem__text">Elegancia total 👑</div>
+                <div class="titem__text">Elegancia total.</div>
               </div>
             </div>
 
@@ -319,7 +315,7 @@
               <div class="titem__dot"></div>
               <div class="titem__card">
                 <div class="titem__title"><strong>Fiesta</strong></div>
-                <div class="titem__text">¡A bailar! 🎉</div>
+                <div class="titem__text">¡A bailar!</div>
               </div>
             </div>
           </div>
@@ -330,7 +326,7 @@
 
   <section class="section section--alt" id="fotos">
     <div class="section__inner reveal">
-      <p class="eyebrow">📸 RECUERDOS</p>
+      <p class="eyebrow">📷 RECUERDOS</p>
       <h3 class="h3"><strong>Fotos</strong></h3>
 
       <div class="panel panel--gallery">
@@ -339,7 +335,7 @@
             <button class="carBtn carBtn--prev" id="carPrev" type="button" aria-label="Anterior">‹</button>
 
             <div class="carViewport">
-              <img id="carImage" class="carImage" src="./css/components/assets/imagen/1.jpg" alt="Foto del carrusel" tabindex="0">
+              <img id="carImage" class="carImage" src="" alt="Foto del carrusel" tabindex="0">
             </div>
 
             <button class="carBtn carBtn--next" id="carNext" type="button" aria-label="Siguiente">›</button>
@@ -351,31 +347,52 @@
     </div>
   </section>
 
-  <section class="section" id="familia">
-    <div class="section__inner reveal">
-      <p class="eyebrow">👨‍👩‍👧‍👦 CON CARIÑO</p>
-      <h3 class="h3"><strong>Mensaje de la Familia</strong></h3>
+  <section class="section" id="confirmacion">
+    <div class="section__inner reveal confirmSectionHead">
+      <h3 class="h3 h3--confirm"><strong>Confirmar asistencia</strong></h3>
 
-      <div class="grid-2">
-        <div class="panel">
-          <div class="panel__body">
-            <div class="quote">
-              <p class="quote__text">
-                “Con mucha alegría te invitamos a compartir esta noche tan especial.
-                Tu presencia hará este momento aún más inolvidable.”
-              </p>
-              <p class="quote__by">— <strong>Familia de Frida Fernanda</strong></p>
+      <div class="panel panel--confirm">
+        <div class="panel__body panel__body--confirm">
+          <div class="confirmHeaderLine" aria-hidden="true"></div>
+
+          <p class="confirmText">
+            Si esta invitación llegó hasta tus manos, eres una persona muy especial para mí y me gustaría contar con tu compañía este gran día.
+          </p>
+
+          <div class="confirmMascots" aria-hidden="true">
+            <div class="mascotCard mascotCard--one">
+              <img src="./css/components/assets/imagen/carta.png" alt="Decoración confirmación 1">
+            </div>
+            <div class="mascotCard mascotCard--two">
+              <img src="./css/components/assets/imagen/carta.png" alt="Decoración confirmación 2">
+            </div>
+            <div class="mascotCard mascotCard--three">
+              <img src="./css/components/assets/imagen/carta.png" alt="Decoración confirmación 3">
             </div>
           </div>
-        </div>
 
-        <div class="panel">
-          <div class="panel__body">
-            <div class="stackphotos">
-              <img src="https://picsum.photos/seed/xvfam1/900/700" alt="Foto familia 1">
-              <img src="https://picsum.photos/seed/xvfam2/900/700" alt="Foto familia 2">
-              <img src="https://picsum.photos/seed/xvfam3/900/700" alt="Foto familia 3">
-            </div>
+          <p class="confirmDateLabel">Fecha límite para confirmar asistencia:</p>
+
+          <div class="confirmDateBox">
+            Martes 14 de Abril del 2026
+          </div>
+
+          <div class="confirmCallWrap">
+            <a
+              class="confirmCallBtn"
+              href="https://wa.me/5219981318100?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20a%20los%20XV%20de%20Frida%20Fernanda%20Carde%C3%B1a%20Cime."
+              target="_blank"
+              rel="noopener"
+              aria-label="Tócame para confirmar"
+            >
+              <span class="confirmCallText">Tócame para confirmar</span>
+
+              <span class="confirmCallIconWrap">
+                <svg class="confirmCallIconSvg" viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="#fff" d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2.1 7.7L.4 32l8.5-2.1c2.2 1.2 4.7 1.8 7.3 1.8 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.6c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.7 20.8 3 18.5 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13-5.8 13-13 13zm7.5-9.7c-.4-.2-2.3-1.1-2.6-1.2-.3-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5s-1.3 1.2-1.3 2.9c0 1.7 1.3 3.4 1.5 3.6.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .8.8.2 1.5.2 2.1.1.6-.1 2.3-.9 2.6-1.7.3-.8.3-1.5.2-1.7-.1-.2-.4-.3-.8-.5z"/>
+                </svg>
+              </span>
+            </a>
           </div>
         </div>
       </div>
