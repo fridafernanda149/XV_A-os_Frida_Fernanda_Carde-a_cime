@@ -6,7 +6,7 @@ const EVENT_DATE = new Date("2026-04-18T20:00:00-05:00");
 const SONG_FILENAME = "I Only Have Eyes For You — The Flamingos (Subtitulado al Español) [rFpCltwi0jA].mp3";
 const SONG_PATH = `audio/${SONG_FILENAME}`;
 
-const WHATSAPP_NUMBER = "529984761665";
+const WHATSAPP_NUMBER = "52 1 998 131 8100";
 const WHATSAPP_MESSAGE = "Hola, quiero confirmar mi asistencia a los XV de Frida Fernanda Cardeña Cime.";
 
 const CAROUSEL_IMAGES = [
