@@ -11,28 +11,29 @@
 
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <div class="bg-canvas" aria-hidden="true"></div>
   <canvas id="confettiCanvas" class="confetti" aria-hidden="true"></canvas>
+
   <audio id="bgMusic" preload="auto" loop></audio>
 
   <nav class="dock" aria-label="Navegación">
-  <button class="dock__toggle" id="dockToggle" type="button" aria-label="Mostrar u ocultar menú">◂</button>
+    <button class="dock__toggle" id="dockToggle" type="button" aria-label="Mostrar u ocultar menú">◂</button>
 
-  <div class="dock__items" id="dockItems">
-    <button class="dock__btn dock__btn--gold" id="musicToggle" type="button" aria-label="Reproducir o pausar música">
-      🎵 Música
-    </button>
+    <div class="dock__items" id="dockItems">
+      <button class="dock__btn dock__btn--gold" id="musicToggle" type="button" aria-label="Reproducir o pausar música">
+        🎵 Música
+      </button>
 
-    <a class="dock__btn" href="#inicio">Inicio</a>
-    <a class="dock__btn" href="#info">Info</a>
-    <a class="dock__btn" href="#ubicacion">Ubicación</a>
-    <a class="dock__btn" href="#itinerario">Itinerario</a>
-    <a class="dock__btn" href="#fotos">Fotos</a>
-    <a class="dock__btn" href="#confirmacion">Confirmación</a>
-  </div>
-</nav>
+      <a class="dock__btn" href="#inicio">Inicio</a>
+      <a class="dock__btn" href="#info">Info</a>
+      <a class="dock__btn" href="#ubicacion">Ubicación</a>
+      <a class="dock__btn" href="#itinerario">Itinerario</a>
+      <a class="dock__btn" href="#fotos">Fotos</a>
+      <a class="dock__btn" href="#confirmacion">Confirmación</a>
+    </div>
+  </nav>
+
   <section class="stage" id="inicio">
     <div class="invite reveal">
       <div class="orn orn--top" aria-hidden="true"></div>
@@ -49,14 +50,30 @@
             Con la bendición de Dios y el amor de mi familia, me siento muy feliz de llegar a este momento de mi vida.
           </p>
 
-          <p class="subtitle subtitle--formal">
+          <div class="familyIntroCards">
+            <div class="familyIntroCard">
+              <p class="familyIntroCard__label">En compañía de mis padres</p>
+              <p class="familyIntroCard__text">
+                Jorge Carlos Cardeña Peña y Miriam Cime García
+              </p>
+            </div>
+
+            <div class="familyIntroCard">
+              <p class="familyIntroCard__label">Y mis padrinos</p>
+              <p class="familyIntroCard__text">
+                Juan Isauro Poot Romero y Luz María Cardeña Peña
+              </p>
+            </div>
+          </div>
+
+          <p class="texto-invitacion">
             Le invito a usted y a su apreciada familia a compartir conmigo este día tan especial.
           </p>
         </div>
 
         <div class="heroBlock">
-          <div class="eventCard">
-            <p class="eventCard__title">Ceremonia religiosa</p>
+          <article class="eventCard">
+            <h3 class="eventCard__title">Ceremonia religiosa</h3>
 
             <div class="meta meta--event">
               <div class="meta__row">
@@ -74,16 +91,19 @@
             </div>
 
             <div class="actions actions--event">
-              <a class="btn btn--primary"
-                 href="https://maps.google.com/?q=Parroquia+Nuestra+Se%C3%B1ora+de+F%C3%A1tima+Canc%C3%BAn"
-                 target="_blank" rel="noopener">
+              <a
+                class="btn btn--primary"
+                href="https://www.google.com/maps/dir//Nuestra+Se%C3%B1ora+de+F%C3%A1tima,+59,+Kanach%C3%A9n+Supermanzana+59,+77515+Canc%C3%BAn,+Q.R./@21.1950076,-86.8802592,14.25z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8f4c2b812774eb85:0xc570449aadbef71c!2m2!1d-86.8580432!2d21.1572238?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener"
+              >
                 📍 Ver ubicación
               </a>
             </div>
-          </div>
+          </article>
 
-          <div class="eventCard eventCard--reception">
-            <p class="eventCard__title">Recepción</p>
+          <article class="eventCard eventCard--reception">
+            <h3 class="eventCard__title">Recepción</h3>
 
             <div class="meta meta--event">
               <div class="meta__row">
@@ -92,20 +112,23 @@
               </div>
               <div class="meta__row">
                 <div class="meta__label"><strong>LUGAR</strong></div>
-                <div class="meta__value">SALÓN DE EVENTOS VIKTORIA</div>
+                <div class="meta__value">SALÓN VIKTORIA CANCÚN</div>
               </div>
             </div>
 
             <div class="actions actions--event">
-              <a class="btn btn--primary"
-                 href="https://www.google.com/maps/dir//SALON+VIKTORIA+CANCUN,+Av.+Ni%C3%B1os+H%C3%A9roes+Supermanzana+208,+77519+Canc%C3%BAn,+Q.R./@21.1960637,-86.8722049,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8f4c2d0017042ccb:0xe7c1400cebcaf2eb!2m2!1d-86.8889306!2d21.1619825?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
-                 target="_blank" rel="noopener">
+              <a
+                class="btn btn--primary"
+                href="https://www.google.com/maps/dir//SALON+VIKTORIA+CANCUN,+Av.+Ni%C3%B1os+H%C3%A9roes+Supermanzana+208,+77519+Canc%C3%BAn,+Q.R./@21.1960637,-86.8722049,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8f4c2d0017042ccb:0xe7c1400cebcaf2eb!2m2!1d-86.8889306!2d21.1619825?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener"
+              >
                 📍 Ver ubicación
               </a>
             </div>
-          </div>
+          </article>
 
-          <p class="fineprint">Código de vestimenta: <strong>Formal</strong></p>
+          <p class="fineprint">Código de vestimenta: <strong>Formal / casual</strong></p>
 
           <div class="line" aria-hidden="true"></div>
 
@@ -134,24 +157,21 @@
         <article class="card card--infoFeatured">
           <img class="card__imgBig" src="./css/components/assets/imagen/Conjunto_formal_en_tonos_rojos.png" alt="Código de vestimenta">
           <div class="card__body card__body--infoSimple">
-            <div class="infoBadge">Código de vestimenta</div>
-            <p class="infoBigText">Formal / casual</p>
+            <div class="infoBadge">CÓDIGO DE VESTIMENTA</div>
+            <p class="infoBigText">FORMAL / CASUAL</p>
           </div>
         </article>
 
         <article class="card card--infoFeatured">
-          <img class="card__imgBig" src="./css/components/assets/imagen/carta.png" alt="Regalo lluvia de sobres">
+          <img class="card__imgBig" src="./css/components/assets/imagen/carta.png" alt="Lluvia de sobres">
           <div class="card__body card__body--infoSimple">
             <div class="giftHeading">
               <span class="giftEmoji">🎁</span>
-              <h4 class="card__title card__title--gift"><strong>Regalo</strong></h4>
+              <h4 class="card__title card__title--gift">REGALO</h4>
             </div>
-
-            <p class="infoBigText infoBigText--gift">Lluvia de sobres</p>
-
-            <p class="card__text card__text--gift">
-              Gracias por permitirme la manera de recibir mis regalos
-            </p>
+            <p class="infoBigText infoBigText--gift">LLUVIA DE SOBRES</p>
+            <p class="card__text card__text--gift">Gracias por permitirme la manera de recibir mis regalos.</p>
+            <p class="card__text card__text--gift">Gracias por ser parte de este día tan especial.</p>
           </div>
         </article>
       </div>
@@ -166,11 +186,11 @@
       <div class="locationStack">
         <div class="panel panel--locationBlock">
           <div class="panel__body">
-            <p class="locationSectionTitle">Ceremonia religiosa</p>
+            <h3 class="locationSectionTitle">Ceremonia religiosa</h3>
 
             <div class="grid-2 grid-2--loc">
               <div class="locMedia">
-                <img class="locImg" src="./css/components/assets/imagen/iglesia.png" alt="Iglesia de la ceremonia religiosa">
+                <img class="locImg" src="./css/components/assets/imagen/iglesia.png" alt="Iglesia">
               </div>
 
               <div>
@@ -179,20 +199,20 @@
                   <div class="cardline__value">NUESTRA SEÑORA DE FÁTIMA</div>
                 </div>
 
-                <div class="cardline" style="margin-top:10px;">
+                <div class="cardline" style="margin-top:12px;">
                   <div class="cardline__label"><strong>DIRECCIÓN</strong></div>
                   <div class="cardline__value">59, KANACHÉN SUPERMANZANA 59, 77515 CANCÚN, Q.R.</div>
                 </div>
 
-                <div class="row" style="margin-top:12px;">
-                  <a class="btn btn--primary btn--sm"
+                <div class="row" style="margin-top:16px;">
+                  <a class="btn btn--primary"
                      href="https://www.google.com/maps/dir//Nuestra+Se%C3%B1ora+de+F%C3%A1tima,+59,+Kanach%C3%A9n+Supermanzana+59,+77515+Canc%C3%BAn,+Q.R./@21.1950076,-86.8802592,14.25z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8f4c2b812774eb85:0xc570449aadbef71c!2m2!1d-86.8580432!2d21.1572238?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
                      target="_blank" rel="noopener">
                     Abrir ubicación en Google Maps
                   </a>
                 </div>
 
-                <div class="tiprow tiprow--location" style="margin-top:12px;">
+                <div class="tiprow tiprow--location">
                   <div class="tip">
                     <div class="tip__icon">⛪</div>
                     <div>
@@ -200,8 +220,9 @@
                       <div class="tip__text">Te recomendamos llegar con unos minutos de anticipación.</div>
                     </div>
                   </div>
+
                   <div class="tip">
-                    <div class="tip__icon">🕒</div>
+                    <div class="tip__icon">🕘</div>
                     <div>
                       <div class="tip__title"><strong>Hora</strong></div>
                       <div class="tip__text">La ceremonia religiosa inicia a las 7:00 PM.</div>
@@ -213,14 +234,13 @@
           </div>
         </div>
 
-
         <div class="panel panel--locationBlock">
           <div class="panel__body">
-            <p class="locationSectionTitle">Recepción</p>
+            <h3 class="locationSectionTitle">Recepción</h3>
 
             <div class="grid-2 grid-2--loc">
               <div class="locMedia">
-                <img class="locImg" src="./css/components/assets/imagen/fachada.png" alt="Fachada del salón">
+                <img class="locImg" src="./css/components/assets/imagen/fachada.png" alt="Salón Viktoria">
               </div>
 
               <div>
@@ -229,20 +249,20 @@
                   <div class="cardline__value">SALÓN VIKTORIA CANCÚN</div>
                 </div>
 
-                <div class="cardline" style="margin-top:10px;">
+                <div class="cardline" style="margin-top:12px;">
                   <div class="cardline__label"><strong>DIRECCIÓN</strong></div>
                   <div class="cardline__value">AV. NIÑOS HÉROES SUPERMANZANA 208, 77519 CANCÚN, Q.R.</div>
                 </div>
 
-                <div class="row" style="margin-top:12px;">
-                  <a class="btn btn--primary btn--sm"
+                <div class="row" style="margin-top:16px;">
+                  <a class="btn btn--primary"
                      href="https://www.google.com/maps/dir//SALON+VIKTORIA+CANCUN,+Av.+Ni%C3%B1os+H%C3%A9roes+Supermanzana+208,+77519+Canc%C3%BAn,+Q.R./@21.1960637,-86.8722049,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8f4c2d0017042ccb:0xe7c1400cebcaf2eb!2m2!1d-86.8889306!2d21.1619825?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
                      target="_blank" rel="noopener">
                     Abrir ubicación en Google Maps
                   </a>
                 </div>
 
-                <div class="tiprow tiprow--location" style="margin-top:12px;">
+                <div class="tiprow tiprow--location">
                   <div class="tip">
                     <div class="tip__icon">🚗</div>
                     <div>
@@ -250,6 +270,7 @@
                       <div class="tip__text">Llega con tiempo para estacionarte sin estrés.</div>
                     </div>
                   </div>
+
                   <div class="tip">
                     <div class="tip__icon">🎉</div>
                     <div>
@@ -278,8 +299,8 @@
               <div class="titem__time">7:00 PM</div>
               <div class="titem__dot"></div>
               <div class="titem__card">
-                <div class="titem__title"><strong>Misa de acción de gracias</strong></div>
-                <div class="titem__text">Momento especial y bendición para celebrar este día.</div>
+                <div class="titem__title"><strong>MISA DE ACCIÓN DE GRACIAS</strong></div>
+                <div class="titem__text">Momento especial y bendición para celebrar este gran día.</div>
               </div>
             </div>
 
@@ -287,7 +308,7 @@
               <div class="titem__time">8:00 PM</div>
               <div class="titem__dot"></div>
               <div class="titem__card">
-                <div class="titem__title"><strong>Recepción</strong></div>
+                <div class="titem__title"><strong>RECEPCIÓN</strong></div>
                 <div class="titem__text">Llegada y bienvenida.</div>
               </div>
             </div>
@@ -296,7 +317,7 @@
               <div class="titem__time">9:00 PM</div>
               <div class="titem__dot"></div>
               <div class="titem__card">
-                <div class="titem__title"><strong>Entrada</strong></div>
+                <div class="titem__title"><strong>ENTRADA</strong></div>
                 <div class="titem__text">Momento especial.</div>
               </div>
             </div>
@@ -305,7 +326,7 @@
               <div class="titem__time">10:00 PM</div>
               <div class="titem__dot"></div>
               <div class="titem__card">
-                <div class="titem__title"><strong>Vals</strong></div>
+                <div class="titem__title"><strong>VALS</strong></div>
                 <div class="titem__text">Elegancia total.</div>
               </div>
             </div>
@@ -314,11 +335,13 @@
               <div class="titem__time">10:30 PM</div>
               <div class="titem__dot"></div>
               <div class="titem__card">
-                <div class="titem__title"><strong>Fiesta</strong></div>
+                <div class="titem__title"><strong>FIESTA</strong></div>
                 <div class="titem__text">¡A bailar!</div>
               </div>
             </div>
           </div>
+
+          <p class="tiny">*Horarios aproximados.</p>
         </div>
       </div>
     </div>
@@ -327,7 +350,7 @@
   <section class="section section--alt" id="fotos">
     <div class="section__inner reveal">
       <p class="eyebrow">📷 RECUERDOS</p>
-      <h3 class="h3"><strong>Fotos</strong></h3>
+      <h3 class="h3"><strong>FOTOS</strong></h3>
 
       <div class="panel panel--gallery">
         <div class="panel__body panel__body--gallery">
@@ -335,7 +358,7 @@
             <button class="carBtn carBtn--prev" id="carPrev" type="button" aria-label="Anterior">‹</button>
 
             <div class="carViewport">
-              <img id="carImage" class="carImage" src="" alt="Foto del carrusel" tabindex="0">
+              <img id="carImage" class="carImage" src="./css/components/assets/imagen/1.jpg" alt="Foto del carrusel">
             </div>
 
             <button class="carBtn carBtn--next" id="carNext" type="button" aria-label="Siguiente">›</button>
@@ -348,8 +371,10 @@
   </section>
 
   <section class="section" id="confirmacion">
-    <div class="section__inner reveal confirmSectionHead">
-      <h3 class="h3 h3--confirm"><strong>Confirmar asistencia</strong></h3>
+    <div class="section__inner reveal">
+      <div class="confirmSectionHead">
+        <h3 class="h3 h3--confirm"><strong>CONFIRMAR ASISTENCIA</strong></h3>
+      </div>
 
       <div class="panel panel--confirm">
         <div class="panel__body panel__body--confirm">
@@ -359,37 +384,17 @@
             Si esta invitación llegó hasta tus manos, eres una persona muy especial para mí y me gustaría contar con tu compañía este gran día.
           </p>
 
-          <div class="confirmMascots" aria-hidden="true">
-            <div class="mascotCard mascotCard--one">
-              <img src="./css/components/assets/imagen/carta.png" alt="Decoración confirmación 1">
-            </div>
-            <div class="mascotCard mascotCard--two">
-              <img src="./css/components/assets/imagen/carta.png" alt="Decoración confirmación 2">
-            </div>
-            <div class="mascotCard mascotCard--three">
-              <img src="./css/components/assets/imagen/carta.png" alt="Decoración confirmación 3">
-            </div>
-          </div>
-
           <p class="confirmDateLabel">Fecha límite para confirmar asistencia:</p>
-
-          <div class="confirmDateBox">
-            Martes 14 de Abril del 2026
-          </div>
+          <div class="confirmDateBox">MARTES 14 DE ABRIL DEL 2026</div>
 
           <div class="confirmCallWrap">
-            <a
-              class="confirmCallBtn"
-              href="https://wa.me/5219981318100?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20a%20los%20XV%20de%20Frida%20Fernanda%20Carde%C3%B1a%20Cime."
-              target="_blank"
-              rel="noopener"
-              aria-label="Tócame para confirmar"
-            >
+            <a id="confirmBtn" class="confirmCallBtn" href="#" target="_blank" rel="noopener">
               <span class="confirmCallText">Tócame para confirmar</span>
 
-              <span class="confirmCallIconWrap">
-                <svg class="confirmCallIconSvg" viewBox="0 0 32 32" aria-hidden="true">
-                  <path fill="#fff" d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2.1 7.7L.4 32l8.5-2.1c2.2 1.2 4.7 1.8 7.3 1.8 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.6c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.7 20.8 3 18.5 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13-5.8 13-13 13zm7.5-9.7c-.4-.2-2.3-1.1-2.6-1.2-.3-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5s-1.3 1.2-1.3 2.9c0 1.7 1.3 3.4 1.5 3.6.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .8.8.2 1.5.2 2.1.1.6-.1 2.3-.9 2.6-1.7.3-.8.3-1.5.2-1.7-.1-.2-.4-.3-.8-.5z"/>
+              <span class="confirmCallIconWrap" aria-hidden="true">
+                <svg class="confirmCallIconSvg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M27.3 16.02C27.3 22.14 22.28 27.1 16.1 27.1C14.12 27.1 12.27 26.59 10.66 25.7L5.2 27.4L7.02 22.13C5.96 20.44 5.34 18.45 5.34 16.32C5.34 10.2 10.36 5.24 16.54 5.24C22.28 5.24 27.3 9.9 27.3 16.02Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20.45 18.39L18.74 17.9C18.29 17.77 17.81 17.9 17.48 18.24L17.06 18.67C15.79 18.02 14.75 16.99 14.1 15.72L14.53 15.29C14.86 14.96 15 14.47 14.87 14.03L14.38 12.32C14.16 11.55 13.37 11.09 12.61 11.3L11.45 11.63C10.76 11.82 10.29 12.46 10.36 13.18C10.72 17.06 13.8 20.13 17.67 20.49C18.4 20.56 19.03 20.1 19.23 19.4L19.56 18.25C19.77 17.48 19.31 16.61 18.54 16.4" fill="white"/>
                 </svg>
               </span>
             </a>
@@ -400,12 +405,14 @@
   </section>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Cerrar imagen">✕</button>
-    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Foto anterior">‹</button>
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Cerrar">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Anterior">‹</button>
+
     <div class="lightbox__content">
       <img id="lightboxImage" class="lightbox__image" src="" alt="Foto ampliada">
     </div>
-    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Foto siguiente">›</button>
+
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Siguiente">›</button>
   </div>
 
   <script type="module" src="js/script.js"></script>

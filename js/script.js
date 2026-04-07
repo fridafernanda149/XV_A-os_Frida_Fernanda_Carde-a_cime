@@ -361,6 +361,104 @@ function setupConfirmButton(){
 }
 
 // ============================
+// CONFETTI
+// ============================
+function setupConfetti(){
+  const canvas = document.getElementById("confettiCanvas");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d", { alpha:true });
+  if (!ctx) return;
+
+  let w = 0;
+  let h = 0;
+  let animationId = null;
+  const pieces = [];
+
+  function rand(min, max){
+    return Math.random() * (max - min) + min;
+  }
+
+  function resize(){
+    w = window.innerWidth;
+    h = window.innerHeight;
+
+    canvas.width = w;
+    canvas.height = h;
+
+    pieces.length = 0;
+
+    const count = Math.max(14, Math.floor((w * h) / 52000));
+
+    for(let i = 0; i < count; i++){
+      pieces.push({
+        x: rand(0, w),
+        y: rand(-h, h),
+        width: rand(5, 10),
+        height: rand(10, 18),
+        speedY: rand(0.12, 0.35),
+        speedX: rand(-0.35, 0.35),
+        rotation: rand(0, Math.PI * 2),
+        rotationSpeed: rand(-0.03, 0.03),
+        alpha: rand(0.35, 0.85),
+        sway: rand(0.01, 0.04)
+      });
+    }
+  }
+
+  function drawPiece(p){
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation);
+
+    const gradient = ctx.createLinearGradient(-p.width / 2, 0, p.width / 2, 0);
+    gradient.addColorStop(0, `rgba(255, 217, 179, ${p.alpha})`);
+    gradient.addColorStop(0.5, `rgba(230, 176, 126, ${p.alpha})`);
+    gradient.addColorStop(1, `rgba(199, 138, 58, ${p.alpha})`);
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(-p.width / 2, -p.height / 2, p.width, p.height);
+
+    ctx.restore();
+  }
+
+  function animate(){
+    ctx.clearRect(0, 0, w, h);
+
+    for(const p of pieces){
+      p.y += p.speedY;
+      p.x += p.speedX + Math.sin(p.y * p.sway) * 0.25;
+      p.rotation += p.rotationSpeed;
+
+      if (p.y > h + 30){
+        p.y = -30;
+        p.x = rand(0, w);
+      }
+
+      if (p.x < -30) p.x = w + 30;
+      if (p.x > w + 30) p.x = -30;
+
+      drawPiece(p);
+    }
+
+    animationId = requestAnimationFrame(animate);
+  }
+
+  resize();
+  animate();
+
+  window.addEventListener("resize", resize);
+
+  document.addEventListener("visibilitychange", ()=>{
+    if(document.hidden){
+      cancelAnimationFrame(animationId);
+    }else{
+      animate();
+    }
+  });
+}
+
+// ============================
 // ARRANCAR EN INVITACIÓN
 // ============================
 function goTopOnLoad(){
@@ -386,4 +484,5 @@ window.addEventListener("load", ()=>{
   setupCarousel();
   setupMusicToggle();
   setupConfirmButton();
+  setupConfetti();
 });
